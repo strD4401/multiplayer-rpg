@@ -1,0 +1,386 @@
+/* This file uses Tailwind utility classes for styling */
+
+.game-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1rem;
+  left: 1rem;
+}
+
+/* Manual Controls */
+.controls {
+  pointer-events: auto;
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.controls div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.controls button {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(55, 65, 81, 0.7);
+  color: white;
+  border-radius: 0.375rem;
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.controls button:hover {
+  background-color: rgb(75, 85, 99);
+}
+
+/* Chat Container */
+.chat-container {
+  pointer-events: auto;
+  position: absolute;
+  bottom: 2rem;
+  right: 1rem;
+  width: 16rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Chat Invitations */
+.invitations-container {
+  background-color: rgba(30, 58, 138, 0.7);
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  max-height: 8rem;
+  overflow-y: auto;
+}
+
+.invitation {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.invitation span {
+  color: white;
+  font-size: 0.875rem;
+}
+
+.invitation-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.accept-btn, .reject-btn {
+  flex: 1;
+  font-size: 0.75rem;
+  padding: 0.25rem 0;
+  border-radius: 0.25rem;
+}
+
+.accept-btn {
+  background-color: rgba(16, 185, 129, 0.8);
+  color: white;
+}
+
+.accept-btn:hover {
+  background-color: rgba(5, 150, 105, 0.9);
+}
+
+.reject-btn {
+  background-color: rgba(239, 68, 68, 0.8);
+  color: white;
+}
+
+.reject-btn:hover {
+  background-color: rgba(220, 38, 38, 0.9);
+}
+
+/* Chat Header */
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chat-actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.invite-btn, .leave-group-btn {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: rgba(59, 130, 246, 0.7);
+  color: white;
+}
+
+.invite-btn:hover {
+  background-color: rgba(37, 99, 235, 0.8);
+}
+
+.leave-group-btn {
+  background-color: rgba(239, 68, 68, 0.7);
+}
+
+.leave-group-btn:hover {
+  background-color: rgba(220, 38, 38, 0.8);
+}
+
+/* Invite menu */
+.invite-menu {
+  background-color: rgba(17, 24, 39, 0.9);
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  position: absolute;
+  width: 90%;
+  top: 3.5rem;
+  left: 5%;
+  z-index: 10;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.invite-header {
+  color: white;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.player-invite-btn {
+  background-color: rgba(59, 130, 246, 0.6);
+  color: white;
+  padding: 0.375rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.25rem;
+  transition: background-color 0.15s;
+  text-align: left;
+}
+
+.player-invite-btn:hover {
+  background-color: rgba(37, 99, 235, 0.7);
+}
+
+.player-invite-btn:disabled {
+  background-color: rgba(107, 114, 128, 0.5);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+}
+
+/* Group Chat Label */
+.group-chat-label {
+  background-color: rgba(37, 99, 235, 0.5);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.875rem;
+  flex: 1;
+}
+
+/* Players in chat container */
+.players-in-chat {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Individual player badges */
+.player-badge {
+  background-color: rgba(37, 99, 235, 0.7);
+  color: white;
+  padding: 0.125rem 0.375rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 6rem;
+}
+
+/* Chat Messages */
+.chat-messages {
+  height: 10rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgba(31, 41, 55, 0.5);
+  border-radius: 0.375rem;
+  color: black;
+}
+
+.system-message {
+  text-align: center;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  margin: 0.25rem 0;
+}
+
+.my-message {
+  margin-left: auto;
+  background-color: rgb(59, 130, 246);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  max-width: 80%;
+}
+
+.other-message {
+  margin-right: auto;
+  background-color: rgb(55, 65, 81);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  max-width: 80%;
+}
+
+.chat-input {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.chat-input input {
+  flex: 1 1 0%;
+  padding: 0.5rem;
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+  background-color: white;
+  color: black;
+  border: none;
+  outline: none;
+}
+
+.chat-input button {
+  background-color: rgb(37, 99, 235);
+  color: white;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+.chat-input button:hover {
+  background-color: rgb(29, 78, 216);
+}
+
+.chat-input button:disabled {
+  background-color: rgb(107, 114, 128);
+  cursor: not-allowed;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .controls {
+    top: 1rem;
+    right: 1rem;
+  }
+  
+  .controls button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .chat-container {
+    width: 14rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .chat-messages {
+    height: 8rem;
+  }
+  
+  .invite-menu {
+    width: 95%;
+    left: 2.5%;
+  }
+}
+
+.username-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  pointer-events: auto;
+}
+
+.username-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.username-display span {
+  font-weight: bold;
+}
+
+.username-edit {
+  display: flex;
+  gap: 5px;
+}
+
+.username-edit input {
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: 1px solid #888;
+  background-color: #222;
+  color: white;
+}
+
+.username-container button {
+  background-color: #4a6da7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+}
+
+.username-container button:hover {
+  background-color: #5a7db7;
+} 
